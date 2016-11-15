@@ -61,7 +61,6 @@ end
 def fact_num(a)
 	a == 0 ? 1 : a*fact_num(a-1)
 end
-
 =end
 
 def fact_num(a)
