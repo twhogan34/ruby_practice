@@ -31,7 +31,9 @@ describe 'arithmetic machine' do
 	it "should raise one number to the power of another" do
 		expect(ind_numbers(9,2)).to eq 81
 	end
-=begin
-	it "should take one number and return its factorial"
-=end
+
+	it "should take one number and return its factorial" do
+		expect(fact_num(5)).to eq 120
+	end
+
 end

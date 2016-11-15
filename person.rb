@@ -40,7 +40,14 @@ def ind_numbers(a,b)
 	a**b
 end
 
-
+def fact_num(a)
+	result = a
+	while a > 1 do
+		result = result * (a - 1)
+		a -= 1
+	end
+	result
+end
 
 
 
