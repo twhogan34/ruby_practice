@@ -7,7 +7,6 @@ class Person
 	end
 
 	def set_hair_color(color)
-		color = 'brown'
 		@hair_color = color
 	end
 
@@ -16,7 +15,6 @@ class Person
 	end
 
 	def set_top_color(color)
-		color = 'yellow'
 		@top_color = color
 	end
 
@@ -25,7 +23,6 @@ class Person
 	end
 
 	def set_height(height)
-		height = 6.5
 		@height = height
 	end
 
