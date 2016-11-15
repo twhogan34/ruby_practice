@@ -1,5 +1,5 @@
 
-require './arithmetic.rb'
+require './person.rb'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

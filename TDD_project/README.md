@@ -1,3 +1,3 @@
-#Person Project
+#TDD Project
 
-This is a README file for my new person project
+This is a README file for my new TDD project, an arithmetic machine
