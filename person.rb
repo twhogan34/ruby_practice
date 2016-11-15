@@ -8,8 +8,6 @@ end
 
 def add_array_numbers(a)
 	result = 0
-	a.each do |num|
-		result += num
-	end
+	a.each {|num| result += num}
 	return result
 end

@@ -10,9 +10,8 @@ describe 'arithmetic machine' do
 	it "should add an array of numbers" do
 		expect(add_array_numbers([5,6,10])).to eq 21
 	end
-=begin
+
 	it "should add an array of numbers" do
 		expect(add_array_numbers([])).to eq 0
 	end
-=end
 end
