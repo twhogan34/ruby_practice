@@ -9,5 +9,15 @@ end
 def add_array_numbers(a)
 	result = 0
 	a.each {|num| result += num}
-	return result
+	result
 end
+=begin
+def add_array_numbers(a)
+	result = 0
+	a.each_with_index do |var, ind|
+		result += var
+		ind +=1
+	end
+	result
+end
+=end
