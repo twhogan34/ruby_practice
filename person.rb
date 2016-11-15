@@ -50,6 +50,13 @@ def fact_num(a)
 	end
 	result
 end
+
+#injects the symbol * in from 1..a and holds the result
+#works for :+, :-, :/ etc.
+def fact_num(a)
+	(1..a).inject(:*) || 1
+end
+
 =end
 
 def fact_num(a)
