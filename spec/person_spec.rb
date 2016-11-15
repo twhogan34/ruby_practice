@@ -27,9 +27,11 @@ describe 'arithmetic machine' do
 		expect(div_numbers(10,2)).to eq 5
 		expect(div_numbers(9,2)).to eq 4.5
 	end
-=begin
-	it "should raise one number to the power of another"
 
+	it "should raise one number to the power of another" do
+		expect(ind_numbers(9,2)).to eq 81
+	end
+=begin
 	it "should take one number and return its factorial"
 =end
 end

@@ -36,6 +36,10 @@ def div_numbers(a,b)
 	a.to_f / b.to_f
 end
 
+def ind_numbers(a,b)
+	a**b
+end
+
 
 
 
