@@ -31,3 +31,22 @@ def mult_array(a)
 	a.each {|num| result *= num}
 	result
 end
+
+def div_numbers(a,b)
+	a.to_f / b.to_f
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

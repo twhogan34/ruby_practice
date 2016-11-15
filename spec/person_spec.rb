@@ -22,9 +22,12 @@ describe 'arithmetic machine' do
 	it "should multiply all numbers in an array" do
 		expect(mult_array([5,2,4])).to eq 40
 	end
-=begin
-	it "should divide two numbers and return a float"
 
+	it "should divide two numbers and return a float" do
+		expect(div_numbers(10,2)).to eq 5
+		expect(div_numbers(9,2)).to eq 4.5
+	end
+=begin
 	it "should raise one number to the power of another"
 
 	it "should take one number and return its factorial"
