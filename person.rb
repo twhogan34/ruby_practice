@@ -21,3 +21,13 @@ def add_array_numbers(a)
 	result
 end
 =end
+
+def mult_numbers(a,b)
+	a*b
+end
+
+def mult_array(a)
+	result = 1
+	a.each {|num| result *= num}
+	result
+end

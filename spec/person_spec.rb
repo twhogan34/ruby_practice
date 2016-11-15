@@ -14,4 +14,19 @@ describe 'arithmetic machine' do
 	it "should add an array of numbers" do
 		expect(add_array_numbers([])).to eq 0
 	end
+
+	it "should multiply two numbers" do
+		expect(mult_numbers(7,5)).to eq 35
+	end
+
+	it "should multiply all numbers in an array" do
+		expect(mult_array([5,2,4])).to eq 40
+	end
+=begin
+	it "should divide two numbers and return a float"
+
+	it "should raise one number to the power of another"
+
+	it "should take one number and return its factorial"
+=end
 end
