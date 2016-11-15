@@ -11,6 +11,7 @@ def add_array_numbers(a)
 	a.each {|num| result += num}
 	result
 end
+
 =begin
 def add_array_numbers(a)
 	result = 0
@@ -40,6 +41,7 @@ def ind_numbers(a,b)
 	a**b
 end
 
+=begin
 def fact_num(a)
 	result = a
 	while a > 1 do
@@ -48,11 +50,15 @@ def fact_num(a)
 	end
 	result
 end
+=end
 
-
-
-
-
+def fact_num(a)
+	result = 1
+	a.times.each do |i|
+		result = result * (i+1)
+	end
+	result
+end
 
 
 
