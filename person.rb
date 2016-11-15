@@ -57,6 +57,11 @@ def fact_num(a)
 	(1..a).inject(:*) || 1
 end
 
+#recursive version from Andrew - NOT CHECKED MY ADDITION OF (a) YET
+def fact_num(a)
+	a == 0 ? 1 : a*fact_num(a-1)
+end
+
 =end
 
 def fact_num(a)
