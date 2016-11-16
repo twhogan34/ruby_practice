@@ -1,4 +1,5 @@
 require 'date'
+require 'pry'
 class Person
 	attr_reader :first_name, :surname, :dob, :fullname, :emails, :phone_numbers
 
@@ -45,4 +46,26 @@ class Person
 		"#{@fullname} was born on #{@dob}.\n Their email addresses are:\n#{@emails}.\n Their phone numbers are #{@phone_numbers}"
 	end
 
+	def print_details
+		puts "#{@fullname}"
+		puts "-" * @fullname.length
+		puts "Date of Birth: #{@dob.strftime("%d %B %Y") rescue "Unknown"}"
+		puts ""
+		puts "Email Addresses:"
+		@emails.each do |email|
+			puts "- " + email + "\n"
+		end
+		puts ""
+		puts "Phone Numbers:"
+		@phone_numbers.each do |phone|
+			puts "- " + phone + "\n"
+		end
+	end
+
 end
+
+joe = Person.new("joe", "bloggs", "1 Jan 1990")
+joe.add_email("joe@foo.com")
+joe.add_email("joe.bloggs@work.com")
+joe.add_phone("02012345678")
+joe.print_details
