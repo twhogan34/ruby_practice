@@ -1,5 +1,6 @@
 
 require './addrbook.rb'
+require './fam_memb.rb'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

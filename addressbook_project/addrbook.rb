@@ -1,6 +1,6 @@
-# Person class defined
 require 'date'
 require 'pry'
+# Person class defined
 class Person
   attr_reader :first_name, :surname, :dob, :fullname, :emails, :phone_numbers
 
@@ -63,9 +63,10 @@ class Person
     end
   end
 end
-
+=begin
 joe = Person.new('joe', 'bloggs', '1 Jan 1990')
 joe.add_email('joe@foo.com')
 joe.add_email('joe.bloggs@work.com')
 joe.add_phone('02012345678')
 joe.print_details
+=end
