@@ -4,7 +4,7 @@ class Bird
 	def initialize
 		@color = nil
 		@type = nil
-		@spotted = false
+		@spotted = 'unspotted'
 		@can_fly = false
 		@length = 0.0
 	end

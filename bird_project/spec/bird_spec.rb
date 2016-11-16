@@ -4,7 +4,7 @@ describe Bird do
 		expect(eclectus.class).to eq Bird
 		expect(eclectus.get_color).to eq nil
 		expect(eclectus.get_type).to eq nil
-		expect(eclectus.get_spotted?).to eq false
+		expect(eclectus.get_spotted?).to eq 'unspotted'
 		expect(eclectus.get_can_fly?).to eq false
 		expect(eclectus.get_length).to eq 0.0
 	end
