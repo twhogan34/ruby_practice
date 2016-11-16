@@ -1,0 +1,1 @@
+These are my Ruby projects from the Sparta Global Academy
