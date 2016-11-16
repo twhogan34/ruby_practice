@@ -24,7 +24,7 @@ describe Bird do
 	it "should let us set the date the bird was spotted on" do
 		eclectus = Bird.new
 		eclectus.set_spotted? true
-		expect(eclectus.get_spotted?).to eq '16/04/2014'
+		expect(eclectus.get_spotted?).to eq Date.today
 		eclectus.set_spotted? false
 		expect(eclectus.get_spotted?).to eq 'Unspotted'
 	end
@@ -32,7 +32,7 @@ describe Bird do
 	it "should let us set if the bird can fly or not" do
 		eclectus = Bird.new
 		eclectus.set_can_fly? true
-		expect(eclectus.get_can_fly?).to eq 'I can fly!'
+		expect(eclectus.get_can_fly?).to eq 'I can fly'
 		eclectus.set_can_fly? false
 		expect(eclectus.get_can_fly?).to eq 'Sadly I am grounded :('
 	end
@@ -67,12 +67,12 @@ describe Bird do
 
 	it "should be able to describe each bird in full" do
 		eclectus = Bird.new
-		eclectus.get_type
-		eclectus.get_spotted?
-		eclectus.get_color
-		eclectus.get_length
-		eclectus.get_can_fly?
+		eclectus.set_type 'parrot'
+		eclectus.set_spotted? true
+		eclectus.set_color 'purple'
+		eclectus.set_length 29.2
+		eclectus.set_can_fly? true
 		eclectus.chirp
-		expect(eclectus.description).to eq "I am a parrot, I was first spotted on 16/04/2014, I am green and red, I'm 31.75cm long, I can fly and I love to say 'Pretty Polly'"
+		expect(eclectus.description).to eq "I am a parrot, I was first spotted on #{Date.today}, I am purple, I'm 29.2cm long, I can fly and I love to say 'Pretty Polly'"
 	end
 end

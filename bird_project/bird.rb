@@ -1,3 +1,4 @@
+require 'date'
 class Bird
 
 	def initialize
@@ -38,7 +39,7 @@ class Bird
 
 	def set_spotted?(spotted)
 		if spotted == true
-			@spotted = '16/04/2014'
+			@spotted = Date.today
 		else
 			@spotted = 'Unspotted'
 		end
@@ -47,7 +48,7 @@ class Bird
 
 	def set_can_fly?(fly)
 		if fly == true
-			@can_fly ='I can fly!'
+			@can_fly ='I can fly'
 		else
 			@can_fly = 'Sadly I am grounded :('
 		end
@@ -77,13 +78,8 @@ class Bird
 	end
 
 	def description
-		@type = 'parrot'
-		@spotted = '16/04/2014'
-		@color = 'green and red'
-		@length = 31.75
-		@can_fly = 'I can fly'
-		@chirp = 'Pretty Polly'
-		return "I am a #{@type}, I was first spotted on #{@spotted}, I am #{@color}, I'm #{@length}cm long, #{@can_fly} and I love to say '#{@chirp}'"
+		return "I am a #{@type}, I was first spotted on #{@spotted}, I am #{@color}, I'm #{@length}cm long, #{@can_fly} and I love to say '#{chirp}'"
 	end
 
 end
+
