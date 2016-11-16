@@ -41,7 +41,7 @@ class Bird
 		if spotted == true
 			@spotted = Date.today
 		else
-			@spotted = 'Unspotted'
+			@spotted = 'unspotted'
 		end
 		return @spotted
 	end
@@ -50,7 +50,7 @@ class Bird
 		if fly == true
 			@can_fly ='I can fly'
 		else
-			@can_fly = 'Sadly I am grounded :('
+			@can_fly = 'sadly I am grounded'
 		end
 		return @can_fly
 	end
@@ -70,16 +70,19 @@ class Bird
 
 	def waddle
 		@can_fly = false
-		return 'Sadly I can\'t fly, I have to waddle!'
+		return 'sadly I can\'t fly, I have to waddle'
 	end
 
 	def peck
 		return 'Hey! That\'s my food! Keep off!'
 	end
 
-	def description
+	def description_fly
 		return "I am a #{@type}, I was first spotted on #{@spotted}, I am #{@color}, I'm #{@length}cm long, #{@can_fly} and I love to say '#{chirp}'"
 	end
 
+	def description_nofly
+		return "I am a #{@type}, I am as yet #{@spotted}, I am #{@color}, I'm #{@length}cm long, #{waddle} and I love to say '#{chirp}'"
+	end
 end
 

@@ -26,7 +26,7 @@ describe Bird do
 		eclectus.set_spotted? true
 		expect(eclectus.get_spotted?).to eq Date.today
 		eclectus.set_spotted? false
-		expect(eclectus.get_spotted?).to eq 'Unspotted'
+		expect(eclectus.get_spotted?).to eq 'unspotted'
 	end
 
 	it "should let us set if the bird can fly or not" do
@@ -34,7 +34,7 @@ describe Bird do
 		eclectus.set_can_fly? true
 		expect(eclectus.get_can_fly?).to eq 'I can fly'
 		eclectus.set_can_fly? false
-		expect(eclectus.get_can_fly?).to eq 'Sadly I am grounded :('
+		expect(eclectus.get_can_fly?).to eq 'sadly I am grounded'
 	end
 
 	it "should let us set the bird length" do
@@ -57,7 +57,7 @@ describe Bird do
 	it "should waddle if it can't fly" do
 		eclectus = Bird.new
 		eclectus.set_can_fly? false
-		expect(eclectus.waddle).to eq 'Sadly I can\'t fly, I have to waddle!'
+		expect(eclectus.waddle).to eq 'sadly I can\'t fly, I have to waddle'
 	end
 
 	it "should be able to peck" do
@@ -65,7 +65,7 @@ describe Bird do
 		expect(eclectus.peck).to eq 'Hey! That\'s my food! Keep off!'
 	end
 
-	it "should be able to describe each bird in full" do
+	it "should be able to describe a bird that can fly and has been spotted" do
 		eclectus = Bird.new
 		eclectus.set_type 'parrot'
 		eclectus.set_spotted? true
@@ -73,6 +73,17 @@ describe Bird do
 		eclectus.set_length 29.2
 		eclectus.set_can_fly? true
 		eclectus.chirp
-		expect(eclectus.description).to eq "I am a parrot, I was first spotted on #{Date.today}, I am purple, I'm 29.2cm long, I can fly and I love to say 'Pretty Polly'"
+		expect(eclectus.description_fly).to eq "I am a parrot, I was first spotted on #{Date.today}, I am purple, I'm 29.2cm long, I can fly and I love to say 'Pretty Polly'"
+	end
+
+	it "should be able to describe a flightless bird that hasn't been spotted" do
+		emu = Bird.new
+		emu.set_type 'emu'
+		emu.set_spotted? false
+		emu.set_color 'brown with whiteish bits'
+		emu.set_length 99
+		emu.set_can_fly? false
+		emu.chirp
+		expect(emu.description_nofly).to eq "I am a emu, I am as yet unspotted, I am brown with whiteish bits, I'm 99cm long, sadly I can't fly, I have to waddle and I love to say 'Pretty Polly'"
 	end
 end
