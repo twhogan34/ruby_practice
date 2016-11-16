@@ -1,5 +1,0 @@
-describe FamilyMember do
-	
-	
-	
-end
