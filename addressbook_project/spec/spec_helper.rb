@@ -1,5 +1,5 @@
 
-require './addrbook.rb'
+require './person_dets.rb'
 require './fam_memb.rb'
 
 RSpec.configure do |config|
