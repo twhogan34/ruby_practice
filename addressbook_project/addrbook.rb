@@ -33,4 +33,16 @@ class Person
 		@phone_numbers << phone
 	end
 
+	def remove_email(email)
+		@emails.delete_at(email)
+	end
+
+	def remove_phone(phone)
+		@phone_numbers.delete_at(phone)
+	end
+
+	def to_s
+		"#{@fullname} was born on #{@dob}.\n Their email addresses are:\n#{@emails}.\n Their phone numbers are #{@phone_numbers}"
+	end
+
 end
