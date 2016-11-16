@@ -1,41 +1,18 @@
 class Person
+	attr_accessor :hair_color, :top_color, :height
 
-	def initialize
-		@hair_color = nil
-		@top_color = nil
-		@height = 0.0
-	end
-
-	def set_hair_color(color)
-		@hair_color = color
-	end
-
-	def get_hair_color
-		return @hair_color
-	end
-
-	def set_top_color(color)
-		@top_color = color
-	end
-
-	def get_top_color
-		return @top_color
-	end
-
-	def set_height(height)
+	def initialize(hair_color, top_color=nil, height=0.0)
+		@hair_color = hair_color
+		@top_color = top_color
 		@height = height
 	end
 
-	def get_height
-		return @height
-	end
-
+	#Other instance methods
 	def dance
-		return "I'm Dancing!"
+		"I'm Dancing!"
 	end
 
 	def sleep
-		return "zzzzzzzzzz"
+		"zzzzzzzzzz"
 	end
-	
 end
