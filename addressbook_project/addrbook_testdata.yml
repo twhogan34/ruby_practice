@@ -1,0 +1,17 @@
+people:
+  - first_name: Tom
+    surname: Hogan
+    dob: 04 Mar 1992
+    emails:
+      - thogan@spartaglobal.co
+      - twhogan34@gmail.com
+    phone_numbers:
+      - 07786438120
+  - first_name: Harnish
+    surname: Vora
+    dob: 22 Apr 1991
+    emails:
+      - hvora22@googlemail.com
+      - hvora@spartaglobal.co
+    phone_numbers:
+      - 07907208789

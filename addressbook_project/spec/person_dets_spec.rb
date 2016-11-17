@@ -13,7 +13,6 @@ describe Person do
     person = Person.new 'joe', 'bloggs'
     expect(person.first_name).to eq 'Joe'
     expect(person.surname).to eq 'Bloggs'
-    expect(person.fullname).to eq 'Joe Bloggs'
     expect(person.dob).to eq nil
     expect(person.emails).to eq []
     expect(person.phone_numbers).to eq []
@@ -25,22 +24,20 @@ describe Person do
 
   it 'should let us change the first name given and update fullname field' do
     person = Person.new 'gary', 'bloggs'
-    person.change_first_name 'joe'
+    person.first_name = 'joe'
     expect(person.first_name).to eq 'Joe'
-    expect(person.fullname).to eq 'Joe Bloggs'
   end
 
   it 'should let us change the surname given and update fullname field' do
     person = Person.new 'joe', 'barry'
-    person.change_surname 'bloggs'
+    person.surname = 'bloggs'
     expect(person.surname).to eq 'Bloggs'
-    expect(person.fullname).to eq 'Joe Bloggs'
   end
 
   it 'should let us set a date of birth and parse it into YYYY-MM-DD form' do
     person = Person.new 'joe', 'bloggs'
-    person.set_dob '1 Jan 1990'
-    expect(person.dob).to eq '1990-01-01'
+    person.dob = '1 Jan 1990'
+    expect(person.dob).to eq Date.parse('1 Jan 1990')
   end
 
   it 'should let us add emails and store them in an array' do
@@ -80,5 +77,10 @@ describe Person do
     person.add_phone '02012345678'
     expect(person.to_s).to eq "Joe Bloggs was born on 1990-01-01.\n Their email addresses are:
 [\"joe@foo.com\"].\n Their phone numbers are [\"07712345678\", \"02012345678\"]"
+  end
+
+  it 'should allow us to display a person\'s full name' do
+    person = Person.new 'joe', 'bloggs'
+    expect(person.fullname).to eq 'Joe Bloggs'
   end
 end

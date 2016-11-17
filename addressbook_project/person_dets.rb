@@ -2,30 +2,26 @@ require 'date'
 require 'pry'
 # Person class defined
 class Person
-  attr_reader :first_name, :surname, :dob, :fullname, :emails, :phone_numbers
+  attr_reader :first_name, :surname, :dob, :emails, :phone_numbers
 
   def initialize(first_name, surname, dob = nil)
-    @first_name = first_name.capitalize!
-    @surname = surname.capitalize!
-    @dob = Date.parse(dob) rescue nil
-    @fullname = "#{first_name} #{surname}"
+    @first_name = first_name.capitalize
+    @surname = surname.capitalize
+    @dob = Date.parse(dob) unless dob.nil?
     @emails = []
     @phone_numbers = []
-    @store = {}
   end
 
-  def change_first_name(first_name)
-    @first_name = first_name.capitalize!
-    @fullname = "#{@first_name} #{@surname}"
+  def first_name=(first_name)
+    @first_name = first_name.capitalize
   end
 
-  def change_surname(surname)
-    @surname = surname.capitalize!
-    @fullname = "#{@first_name} #{@surname}"
+  def surname=(surname)
+    @surname = surname.capitalize
   end
 
-  def set_dob(dob)
-    @dob = Date.parse(dob).to_s
+  def dob=(dob)
+    @dob = Date.parse(dob)
   end
 
   def add_email(email)
@@ -36,31 +32,35 @@ class Person
     @phone_numbers << phone
   end
 
-  def remove_email(email)
-    @emails.delete_at(email)
+  def remove_email(index)
+    @emails.delete_at(index)
   end
 
-  def remove_phone(phone)
-    @phone_numbers.delete_at(phone)
+  def remove_phone(index)
+    @phone_numbers.delete_at(index)
   end
 
   def to_s
-    "#{@fullname} was born on #{@dob}.\n Their email addresses are:\n#{@emails}.\n Their phone numbers are #{@phone_numbers}"
+    "#{@first_name} #{@surname} was born on #{@dob}.\n Their email addresses are:\n#{@emails}.\n Their phone numbers are #{@phone_numbers}"
+  end
+
+  def fullname
+    "#{first_name} #{surname}"
   end
 
   def print_details
-    puts @fullname
-    puts '-' * @fullname.length
+    puts fullname
+    puts '-' * fullname.length
     puts "Date of Birth: #{@dob.strftime('%d %B %Y') rescue 'Unknown'}"
     puts ''
     puts 'Email Addresses:'
     @emails.each do |email|
-      puts '- ' + email + "\n"
+      puts '- ' + email
     end
     puts ''
     puts 'Phone Numbers:'
     @phone_numbers.each do |phone|
-      puts '- ' + phone + "\n"
+      puts '- ' + phone
     end
   end
 end
