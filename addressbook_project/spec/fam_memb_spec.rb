@@ -7,12 +7,12 @@ describe FamilyMember do
     expect(person.dob).to eq nil
     expect(person.emails).to eq []
     expect(person.phone_numbers).to eq []
-    expect(person.relationship).to eq nil
+    expect(person.relationship).to eq 'relative'
   end
 
   it 'should allow us to set a family relationship value' do
     person = FamilyMember.new 'barry', 'bloggs'
-    person.new_rel 'Father'
+    person.relationship = 'Father'
     expect(person.relationship).to eq 'Father'
   end
 end
