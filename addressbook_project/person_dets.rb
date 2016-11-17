@@ -55,12 +55,12 @@ class Person
     puts ''
     puts 'Email Addresses:'
     @emails.each do |email|
-      puts '- ' + email + '\n'
+      puts '- ' + email + "\n"
     end
     puts ''
     puts 'Phone Numbers:'
     @phone_numbers.each do |phone|
-      puts '- ' + phone + '\n'
+      puts '- ' + phone + "\n"
     end
   end
 end

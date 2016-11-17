@@ -17,11 +17,15 @@ describe AddressBook do
   end
 
   it 'should be able to print an addressbook entry list' do
-    expect(STDOUT)
+    expect(STDOUT).to receive(:puts).with 'Address Book'
+    expect(STDOUT).to receive(:puts).with '------------'
+    expect(STDOUT).to receive(:puts).with 'Entry 1: Joe Bloggs'
+    expect(STDOUT).to receive(:puts).with 'Entry 2: Andy Nother'
     book = AddressBook.new
     person1 = Person.new('joe', 'bloggs', '1 Jan 1990')
     person2 = Person.new('andy', 'nother', '2 Jan 1995')
     book.add person1
     book.add person2
-    end
+    book.list
+  end
 end
