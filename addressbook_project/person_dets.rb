@@ -11,6 +11,7 @@ class Person
     @fullname = "#{first_name} #{surname}"
     @emails = []
     @phone_numbers = []
+    @store = {}
   end
 
   def change_first_name(first_name)

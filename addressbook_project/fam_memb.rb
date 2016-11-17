@@ -1,3 +1,4 @@
+require './person_dets.rb'
 # FamilyMember class defined
 class FamilyMember < Person
   attr_reader :relationship
