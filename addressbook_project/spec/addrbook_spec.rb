@@ -27,17 +27,12 @@ describe AddressBook do
   end
 
   it 'should load data from a yaml file into the addressbook' do
-    person1 = Person.new 'Tom', 'Hogan', '04 Mar 1992'
-    person2 = Person.new 'Harnish', 'Vora', '22 Apr 1991'
-    person1.add_email 'thogan@spartaglobal.co'
-    person1.add_email 'twhogan34@gmail.com'
-    person2.add_email 'hvora22@googlemail.com'
-    person2.add_email 'hvora@spartaglobal.co'
-    person1.add_phone '07786438120'
-    person2.add_phone '07907208789'
-
     book = AddressBook.new
     book.load_yaml './addrbook_testdata.yml'
-    expect(book.store).to eq [ person1, person2 ]
+    expect(book.store[0].first_name).to eq 'Tom'
+    expect(book.store[0].surname).to eq 'Hogan'
+    expect(book.store[0].dob).to eq Date.parse('04 Mar 1992')
+    expect(book.store[0].emails[0]).to eq 'thogan@spartaglobal.co'
+    expect(book.store[0].phone_numbers[0]).to eq '07786438120'
   end
 end
