@@ -25,7 +25,7 @@ class AddressBook
     end
   end
 
-  def load_yaml(path="./addrbook_data.yml")
+  def load_yaml(path='./addrbook_data.yml')
     file = YAML.load(File.open(path))
     file['people'].each do |yaml_person|
       new_person = Person.new(yaml_person['first_name'], yaml_person['surname'], yaml_person['dob'])

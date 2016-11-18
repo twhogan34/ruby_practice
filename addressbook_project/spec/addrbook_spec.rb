@@ -10,7 +10,7 @@ describe AddressBook do
     person2 = Person.new('andy', 'nother', '2 Jan 1995')
     book.add person1
     book.add person2
-    expect(book.store).to eq [ person1, person2 ]
+    expect(book.store).to eq [person1, person2]
   end
 
   it 'should be able to print an addressbook entry list' do
