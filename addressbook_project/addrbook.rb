@@ -27,10 +27,10 @@ class AddressBook
 
   def load_yaml(path="./addrbook_data.yml")
     file = YAML.load(File.open(path))
-    file['people'].each do |person|
-      new_person = Person.new(person['first_name'], person['surname'], person['dob'])
-      person['emails'].each { |email| new_person.add_email(email) }
-      person['phone_numbers'].each { |phone| new_person.add_phone(phone) }
+    file['people'].each do |yaml_person|
+      new_person = Person.new(yaml_person['first_name'], yaml_person['surname'], yaml_person['dob'])
+      yaml_person['emails'].each { |email| new_person.add_email(email) }
+      yaml_person['phone_numbers'].each { |phone| new_person.add_phone(phone) }
       add(new_person)
     end
   end
