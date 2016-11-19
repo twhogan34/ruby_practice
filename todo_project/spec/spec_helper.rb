@@ -1,4 +1,4 @@
-
+require 'rspec'
 require './todo.rb'
 
 RSpec.configure do |config|
