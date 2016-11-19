@@ -1,4 +1,4 @@
-describe Person do
+ describe Person do
   it 'should initialize' do
     person = Person.new 'joe', 'bloggs', '1 Jan 1990'
     expect(person.first_name).to eq 'Joe'

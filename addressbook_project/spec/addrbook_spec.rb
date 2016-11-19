@@ -28,7 +28,7 @@ describe AddressBook do
 
   it 'should load data from a yaml file into the addressbook' do
     book = AddressBook.new
-    book.load_yaml './addrbook_testdata.yml'
+    book.load_yaml './spec/addrbook_testdata.yml'
     expect(book.store[0].first_name).to eq 'Tom'
     expect(book.store[0].surname).to eq 'Hogan'
     expect(book.store[0].dob).to eq Date.parse('04 Mar 1992')
