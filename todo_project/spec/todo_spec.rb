@@ -19,33 +19,21 @@ describe Todo do
     expect{ Todo.new }.to raise_error ArgumentError
   end
 
-  it 'should store all todos in a class variable array' do
-    todo1 = Todo.new 'Remember the Milk', Date.today
-    todo2 = Todo.new 'Feed the horses'
-    Todo.todo_list(todo1)
-    Todo.todo_list(todo2).include?(todo1).should eq true
-    Todo.todo_list(todo2).include?(todo2).should eq true
-  end
-
   it 'should let us change the title of a todo' do
     todo = Todo.new 'Remember the Milk', Date.today
     todo.title = 'Solve world peace'
     expect(todo.title).to eq 'Solve world peace'
-    expect(Todo.todo_list(todo)).to eq [todo]
   end
 
   it 'should let us change the due date of a todo' do
     todo = Todo.new 'Deliver all the presents to the good girls and boys', Date.today
     todo.due_date = '25 Dec 2016'
     expect(todo.due_date).to eq Date.parse('25 Dec 2016')
-    expect(Todo.todo_list(todo)).to eq [todo]
   end
 
   it 'should allow us to return all the todos in the array' do
     todo1 = Todo.new 'Remember the Milk', Date.today
     todo2 = Todo.new 'Buy spoons', '11 Dec 2016'
-    Todo.todo_list(todo1)
-    Todo.todo_list(todo2)
     expect(Todo.all).to eq [todo1, todo2]
   end
 
@@ -69,17 +57,16 @@ describe Todo do
   it 'should access the most recently added todo in the array' do
     todo1 = Todo.new 'Remember the Milk', '10 Oct 2016'
     todo2 = Todo.new 'Buy spoons', '11 Dec 2016'
-    Todo.todo_list(todo1)
-    Todo.todo_list(todo2)
     expect(Todo.last).to eq todo2
   end
 
   it 'should find todos that contain a specific string in the title' do
-    todo1 = Todo.new 'Remember the Milk', '10 Oct 2016'
+    todo1 = Todo.new 'Remember the milk', '10 Oct 2016'
     todo2 = Todo.new 'Buy spoons', '11 Dec 2016'
-    Todo.todo_list(todo1)
-    Todo.todo_list(todo2)
-    expect(Todo.find contains: 'Milk').to eq [todo1]
+    todo3 = Todo.new 'Return stolen spoons', '12 Dec 2016'
+    expect(Todo.find contains: 'milk').to eq [todo1]
+    expect(Todo.find contains: 'spoons').to eq [todo2, todo3]
+    expect(Todo.find contains: 'forks').to eq []
   end
 =begin
   it 'should find todos that contain a specific part of date element' do
@@ -91,14 +78,11 @@ describe Todo do
   end
 =end
   it 'should find todos by exact title' do
-    todo1 = Todo.new 'Remember the Milk', '10 Oct 2016'
+    todo1 = Todo.new 'Remember the milk', '10 Oct 2016'
     todo2 = Todo.new 'Buy spoons', '11 Dec 2016'
     todo3 = Todo.new 'Return stolen spoons', '12 Dec 2016'
-    Todo.todo_list(todo1)
-    Todo.todo_list(todo2)
-    Todo.todo_list(todo3)
-    expect(Todo.find exactly: 'Return stolen items').to eq [todo3]
-    expect(Todo.find exactly: 'Buy').to eq []
+    expect(Todo.find exactly: 'Return stolen spoons').to eq [todo3]
+    expect(Todo.find exactly: 'spoons').to eq []
   end
 =begin
   it 'should find todos by exact date' do
