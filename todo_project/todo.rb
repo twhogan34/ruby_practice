@@ -34,8 +34,6 @@ class Todo
       self.contains(params[:contains])
     elsif params[:exactly]
       self.exactly(params[:exactly])
-    else
-      # raise 'error'
     end
   end
 
