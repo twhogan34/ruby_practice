@@ -10,6 +10,10 @@ a.due_date
 a.title = "Some new Titls"
 a.due_date = Date.parse("xxx") # Should only accept date objects
 
-Todo.sync # Should Synchronise with online Todos Service. This is HARD!
+Todo.sync # Should Synchronise with online Todos Service. This is HARD! ,x
 
 sync
+
+expect
+display
+contains
