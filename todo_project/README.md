@@ -1,19 +1,3 @@
-Todo.new("Remember the Milk", Date.today)
-Todo.all #=> [<#Todo>, <#Todo>]
-Todo.last #=> The latest Todo
-Todo.find contains: "Milk"
-Todo.find exactly: "Remember the Milk"
+This project built on our knowledge of Ruby class and instance variables.  I used a class variable to store my todos and a before :each tag in my spec file to allow robust testing.  I also experimented with named parameters as a method for searching through these items, either by a string contained within the title or by the exact title.
 
-a = Todo.new("Buy a Newspaper") # Default dte should be today
-a.title
-a.due_date
-a.title = "Some new Titls"
-a.due_date = Date.parse("xxx") # Should only accept date objects
-
-Todo.sync # Should Synchronise with online Todos Service. This is HARD! ,x
-
-sync
-
-expect
-display
-contains
+It is tested using RSpec.
