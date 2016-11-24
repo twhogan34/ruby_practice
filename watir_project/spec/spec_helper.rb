@@ -3,7 +3,6 @@ require 'watir'
 
 EMAIL = 'thogan@spartaglobal.co'
 PASSWORD = 'watirproject'
-UUID = SecureRandom::uuid
 
 # Helper methods
 def logged_in?
