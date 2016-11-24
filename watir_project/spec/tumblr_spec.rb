@@ -1,6 +1,7 @@
 require 'watir'
 
 describe 'Tumblr' do
+  include SecureRandom
   before :all do
     @browser = Watir::Browser.new :chrome
     @url = 'https://www.tumblr.com'
@@ -29,15 +30,17 @@ describe 'Tumblr' do
   end
 
   it 'should post a text post successfully' do
+    rand_title = SecureRandom::uuid
+    rand_text = SecureRandom::uuid
     expect(@browser.url).to eq "#{@url}/dashboard" rescue 'You are not logged in'
     @browser.goto "#{@url}/new/text"
-    @browser.div(class: 'editor-plaintext').send_keys 'Tom post'
-    @browser.div(class: 'editor-richtext').send_keys 'All green tests!'
+    @browser.div(class: 'editor-plaintext').send_keys rand_title
+    @browser.div(class: 'editor-richtext').send_keys rand_text
     @browser.button(class: 'create_post_button').click
     sleep 2
     expect(@browser.url).to eq "#{@url}/dashboard"
     @browser.goto "#{@url}/blog/pinkmilkshakerebel"
-    expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_title').text).to eq 'Tom post'
-    expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_body').text).to eq 'All green tests!'
+    expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_title').text).to eq rand_title
+    expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_body').text).to eq rand_text
   end
 end

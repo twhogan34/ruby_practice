@@ -3,10 +3,9 @@ require 'watir'
 
 EMAIL = 'thogan@spartaglobal.co'
 PASSWORD = 'watirproject'
+UUID = SecureRandom::uuid
 
 # Helper methods
-public
-
 def logged_in?
   @browser.body.class_name.include?('logged_in')
 end
