@@ -4,6 +4,31 @@ require 'watir'
 EMAIL = 'thogan@spartaglobal.co'
 PASSWORD = 'watirproject'
 
+# Helper methods
+public
+
+def logged_in?
+  @browser.body.class_name.include?('logged_in')
+end
+
+def logout
+  @browser.goto "#{@url}/logout"
+end
+
+def login
+  if @browser.url.include? "/login"
+    @browser.input(id: 'signup_determine_email').send_keys EMAIL
+    @browser.button(id: 'signup_forms_submit').click
+    @browser.button(id: 'login-signin').click
+    @browser.input(id: 'login-passwd').send_keys PASSWORD
+    @browser.button(id: 'login-signin').click
+    Watir::Wait.until { @browser.body(id: 'dashboard_index').exists? }
+  else
+    'You must be on the login page to log in'
+  end
+end
+
+
 # Configure RSpec
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
