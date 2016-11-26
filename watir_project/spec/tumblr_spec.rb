@@ -19,7 +19,7 @@ describe 'Tumblr' do
       login
     end
   end
-=begin
+
   it 'should log in with correct details' do
     expect(@browser.url).to eq "#{@url}/dashboard"
   end
@@ -67,7 +67,7 @@ describe 'Tumblr' do
     expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_title').text).to eq rand_title
     expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_body').text).to eq rand_text
   end
-=end
+
   it 'should be able to delete a post' do
     @browser.goto "#{@url}/blog/pinkmilkshakerebel"
     title = @browser.ol(id: 'posts').lis[1].div(class: 'post_title')
