@@ -5,7 +5,7 @@ people:
     emails:
       - thogan@spartaglobal.co
       - twhogan34@gmail.com
-    phones:
+    phone_numbers:
       - 07786438120
   - first_name: Luke
     surname: Hargraves
@@ -13,15 +13,15 @@ people:
     emails:
       - lhargraves95@gmail.com
       - lhargraves@spartaglobal.co
-    phones:
-      - 07460666670
+    phone_numbers:
+      - 07901222012
   - first_name: Harnish
     surname: Vora
     dob: 22 Apr 1991
     emails:
       - hvora22@googlemail.com
       - hvora@spartaglobal.co
-    phones:
+    phone_numbers:
       - 07907208789
   - first_name: Aidan
     surname: Tallon
@@ -29,7 +29,7 @@ people:
     emails:
       - aidantallon@hotmail.com
       - atallon@spartaglobal.co
-    phones:
+    phone_numbers:
       - 07530254943
   - first_name: Work Susan
     surname: Pradhan
@@ -37,15 +37,15 @@ people:
     emails:
       - suzan6p@ymail.com
       - suzan6p@gmail.com
-    phones:
-      -07838382729
+    phone_numbers:
+      - 07838382729
   - first_name: David
     surname: Lake
     dob: 19 Dec 1993
     emails:
       - dlake@spartaglobal.co
       - lakedavid23@gmail.com
-    phones:
+    phone_numbers:
       - 01268770260
       - 07429176669
   - first_name: Ash
@@ -54,7 +54,7 @@ people:
     emails:
       - JustAsh@live.com
       - AshOAsh@gmail.com
-    phones: 
+    phone_numbers: 
       - 0771487359
       - 0203847892
   - first_name: BABEraham
@@ -62,19 +62,19 @@ people:
     dob: 3 Apr 1995
     emails:
       - asiregar@spartaglobal.co
-    phones:
+    phone_numbers:
       - 07804244752
   - first_name: Andrew
     surname: Dean
     dob: 26 Feb 1998
     emails:
       - adean@spartaglobal.co
-    phones:
+    phone_numbers:
       - 07534964131
   - first_name: Husna
     surname: Ahad
     dob: 26 Sep 1992 
     emails: 
       - hahad@spartaglobal.co
-    phones: 
+    phone_numbers: 
       - 07412557693
