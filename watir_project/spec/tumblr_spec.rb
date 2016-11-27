@@ -52,7 +52,7 @@ describe 'Tumblr' do
     expect(@browser.url).to eq "#{@url}/login"
   end
 
-  it 'should post a text post successfully' do
+  it 'should post a text post successfully', :focus do
     rand_title = SecureRandom::uuid
     rand_text = SecureRandom::uuid
 
@@ -61,26 +61,26 @@ describe 'Tumblr' do
     @browser.div(class: 'editor-plaintext').send_keys rand_title
     @browser.div(class: 'editor-richtext').send_keys rand_text
     @browser.button(class: 'create_post_button').click
-    sleep 2
+    Watir::Wait.until { @browser.div(class: 'post-container-inner').exists? == false }
     expect(@browser.url).to eq "#{@url}/dashboard"
     @browser.goto "#{@url}/blog/pinkmilkshakerebel"
     expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_title').text).to eq rand_title
     expect(@browser.ol(id: 'posts').lis[1].div(class: 'post_body').text).to eq rand_text
+    #teardown method needed
   end
 
   it 'should be able to delete a post' do
+    #api setup needed
     @browser.goto "#{@url}/blog/pinkmilkshakerebel"
-    title = @browser.ol(id: 'posts').lis[1].div(class: 'post_title')
-    words = @browser.ol(id: 'posts').lis[1].div(class: 'post_body')
+    @id = @browser.lis(class: "post_container")[1].attribute_value("data-pageable")
 
     @browser.ol(id: 'posts').lis[1].div(class: 'creator').click
     Watir::Wait.until { @browser.div(class: 'post_controls_inner').div(class: 'active').present? }
     @browser.ol(id: 'posts').ul(class: 'popover_inner').lis[1].click
-    sleep 1
+    Watir::Wait.until { @browser.div(class: 'ui_dialog_pos').exists? }
     @browser.button(class: 'blue').click
-    sleep 1
-    expect(@browser.title.object_id.exists?).to eq false
-    expect(@browser.words.object_id.exists?).to eq false
+    Watir::Wait.until { @browser.div(class: 'ui_dialog_pos').exists? == false }
+    expect(find_post).to eq false
   end
 
 =begin

@@ -27,6 +27,20 @@ def login
   end
 end
 
+def find_post
+  @browser.lis(class: "post_container").each do |list_item|
+    if list_item.attribute_value('data-pageable') == @id
+      return true
+    else
+      return false
+    end
+  end
+end
+
+# Focus method
+RSpec.configure do |config|
+  config.filter_run :focus => true
+end
 
 # Configure RSpec
 RSpec.configure do |config|
