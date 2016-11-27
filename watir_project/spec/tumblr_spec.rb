@@ -52,7 +52,7 @@ describe 'Tumblr' do
     expect(@browser.url).to eq "#{@url}/login"
   end
 
-  it 'should post a text post successfully', :focus do
+  it 'should post a text post successfully' do
     rand_title = SecureRandom::uuid
     rand_text = SecureRandom::uuid
 
@@ -83,10 +83,17 @@ describe 'Tumblr' do
     expect(find_post).to eq false
   end
 
-=begin
-  it 'should be able to post an image' do
+  it "should be able to post images" do
+    @browser. goto "#{@url}/new/photo"
+    @browser.div(class: 'dropzone-add-url-icon').click
+    @browser.div(class: 'editor-plaintext').send_keys "http://bit.ly/2aI3Nw4\n"
+    Watir::Wait.until { @browser.div(class: 'editor-placeholder').visible? == false }
+    @browser.button(class: 'create_post_button').click
+    Watir::Wait.until { @browser.div(class: 'post-container-inner').exists? == false }
+    @browser.goto "#{@url}/blog/pinkmilkshakerebel"
+    expect(@browser.lis(class: "post_container")[1].exists?).to eq true
+    #teardown method needed
   end
-=end
 
 end
 

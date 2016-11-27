@@ -38,9 +38,9 @@ def find_post
 end
 
 # Focus method
-RSpec.configure do |config|
-  config.filter_run :focus => true
-end
+#RSpec.configure do |config|
+#  config.filter_run :focus => true
+#end
 
 # Configure RSpec
 RSpec.configure do |config|
