@@ -30,11 +30,12 @@ end
 
 When(/^I enter correct user details$/) do
   @browser.text_field(id: 'email').send_keys 'thogan@spartaglobal.co'
+# This step should fail as these are not my password details  
   @browser.text_field(id: 'password').send_keys "XXX\n"
 end
 
 Then(/^I should be able to access my slack channel$/) do
-  @browser.url.eql? 'https://spartaglobal.slack.com/messages/announcements/'
+  @browser.div(id: 'team_menu').present? == true
 end
 
 # unregistered email
