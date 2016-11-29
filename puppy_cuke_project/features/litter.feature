@@ -16,5 +16,5 @@ Scenario: Add extras to my purchase
   When I select the checkbox for an additional product or service
   Then the total price should be updated
   And the newly selected item should show as selected
-  But the individual puppy price should remain the same
+  But the individual price of the puppy I am purchasing the item for should remain the same
     

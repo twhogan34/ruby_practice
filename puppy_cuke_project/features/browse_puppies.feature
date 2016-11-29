@@ -25,9 +25,3 @@ Scenario: Return to puppy list from an individual puppy's page
   Given I am on an individual puppy's page
   When I click the button for returning to the puppy list
   Then I should be redirected to the pupply list on the homepage
-
-Scenario: Return to puppy list using logo button
-  Given I am on any page on the website
-  Then the logo should be present
-  When I click the logo
-  Then I should be redirected to the homepage
