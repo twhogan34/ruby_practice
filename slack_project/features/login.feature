@@ -29,10 +29,12 @@ Scenario: Unregistered email
 Scenario Outline: Incorrect logins
   When I enter my team domain name successfully
   Then I should be asked to enter my personal login details
-  When I enter the following details:
+  When I enter the following incorrect details: <email> and <password>
+  Then an error will be thrown and I won't be able to login
+
+  Examples:
     | email                  | password |
     | hello                  | password |
     | thogan@spartaglobal.co | password |
     |                        | password |
     |                        |          |
-  Then an error will be thrown and I won't be able to login
