@@ -26,8 +26,7 @@ Then(/^I should be asked to enter my personal login details$/) do
 end
 
 When(/^I enter correct user details$/) do
-  @browser.text_field(id: 'email').send_keys "#{@email}"
-# This step should fail as these are not my password details  
+  @browser.text_field(id: 'email').send_keys @email
   @browser.text_field(id: 'password').send_keys "#{@password}\n"
 end
 
@@ -37,7 +36,7 @@ end
 
 # unregistered email
 When(/^I enter an unregistered but valid email$/) do
-  @browser.text_field(id: 'email').send_keys "#{@invalid_email}"
+  @browser.text_field(id: 'email').send_keys @invalid_email
   @browser.text_field(id: 'password').send_keys "password\n"
 end
 

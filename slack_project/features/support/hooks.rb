@@ -2,7 +2,7 @@ Before do
   @browser = Watir::Browser.new :chrome
 end
 
-Before ('@login') do
+Before('@login') do
   @browser.goto signin_url
   userdetails
   @domain = @details['domain']
