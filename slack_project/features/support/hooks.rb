@@ -1,17 +1,19 @@
-Before do
-  @browser = Watir::Browser.new :chrome
-  userdetails
-  @domain = @details['domain']
-  @invalid_domain = @details['invalid_domain']
-  @email = @details['email']
-  @password = @details['password']
-  @invalid_email = @details['invalid_email']
-end
-
 Before('@login') do
-  @browser.goto signin_url
+  @browser = Watir::Browser.new :chrome
+  @domain = DomainPage.new(@browser)
+  @login = LoginPage.new(@browser)
+  @channel = ChannelPage.new(@browser)
 end
-
+=begin
 Before('@online_status') do
   login
+end
+=end
+
+After('@login') do
+  @browser.close
+end
+
+at_exit do
+  @browser.close
 end

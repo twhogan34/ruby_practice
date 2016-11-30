@@ -1,1 +1,2 @@
 not_manual: -t ~@manual
+login: -t @incorrect_domain,@successful_login,@unregistered

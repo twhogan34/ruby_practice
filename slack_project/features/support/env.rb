@@ -2,18 +2,9 @@ require 'pry'
 require 'watir'
 require 'yaml'
 
-def userdetails(path = './features/support/userdata.yml')
-  @details = YAML.load(File.open(path))
-end
+#USER_DETAILS = YAML.load(File.open('./features/support/userdata.yml'))
 
-def signin_url
-  'https://slack.com/signin'
-end
-
-def url(path = '/')
-  'https://spartaglobal.slack.com' + path
-end
-
+=begin
 def login
   if @browser.url.eql? signin_url
     @browser.text_field(id: 'domain').send_keys "#{@domain}\n"
@@ -25,3 +16,4 @@ def login
     @browser.goto signin_url
   end 
 end
+=end
