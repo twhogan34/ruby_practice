@@ -1,12 +1,10 @@
 class LoginPage
-  def initialize(browser, path = './features/support/userdata.yml')
+  def initialize(browser)
     @browser = browser
-    @details = YAML.load(File.open(path))
   end
 
-  def visit(path = './features/support/urls.yml')
-    @url = YAML.load(File.open(path))
-    @browser.goto @url['base_url']
+  def visit
+    @browser.goto URLS['base_url']
   end
 
   def confirm_on_page
@@ -14,14 +12,14 @@ class LoginPage
   end
 
   def login
-    @email = @details['email']
-    @password = @details['password']
+    @email = USER_DETAILS['email']
+    @password = USER_DETAILS['password']
     @browser.text_field(id: 'email').send_keys @email
     @browser.text_field(id: 'password').send_keys "#{@password}\n"
   end
 
   def failed_login
-    @invalid_email = @details['invalid_email']
+    @invalid_email = USER_DETAILS['invalid_email']
     @browser.text_field(id: 'email').send_keys @invalid_email
     @browser.text_field(id: 'password').send_keys "password\n"
   end

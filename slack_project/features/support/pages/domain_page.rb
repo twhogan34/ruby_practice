@@ -1,12 +1,10 @@
 class DomainPage
-  def initialize(browser, path = './features/support/userdata.yml')
+  def initialize(browser)
     @browser = browser
-    @details = YAML.load(File.open(path))
   end
 
-  def visit(path = './features/support/urls.yml')
-    @url = YAML.load(File.open(path))
-    @browser.goto @url['signin_url']
+  def visit
+    @browser.goto URLS['signin_url']
   end
 
   def confirm_on_page
@@ -14,12 +12,12 @@ class DomainPage
   end
 
   def login
-    @domain = @details['domain']
+    @domain = USER_DETAILS['domain']
     @browser.text_field(id: 'domain').send_keys "#{@domain}\n"
   end
 
   def failed_login
-    @invalid_domain = @details['invalid_domain']
+    @invalid_domain = USER_DETAILS['invalid_domain']
     @browser.text_field(id: 'domain').send_keys "#{@invalid_domain}\n"
   end
 

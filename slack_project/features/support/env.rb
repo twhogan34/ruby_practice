@@ -2,7 +2,8 @@ require 'pry'
 require 'watir'
 require 'yaml'
 
-#USER_DETAILS = YAML.load(File.open('./features/support/userdata.yml'))
+USER_DETAILS = YAML.load(File.open('./features/support/test_data/userdata.yml'))
+URLS = YAML.load(File.open('./features/support/test_data/urls.yml'))
 
 =begin
 def login
