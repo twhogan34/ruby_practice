@@ -1,5 +1,6 @@
 @login
 Feature: Login
+  This feature will test the login functionality of the website
 
 Background:
   Given I am on the signin page
