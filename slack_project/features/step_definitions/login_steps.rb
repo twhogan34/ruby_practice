@@ -31,7 +31,7 @@ end
 When(/^I enter correct user details$/) do
   @browser.text_field(id: 'email').send_keys 'thogan@spartaglobal.co'
 # This step should fail as these are not my password details  
-  @browser.text_field(id: 'password').send_keys "XXX\n"
+  @browser.text_field(id: 'password').send_keys password
 end
 
 Then(/^I should be able to access my slack channel$/) do
