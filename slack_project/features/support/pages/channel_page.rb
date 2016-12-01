@@ -11,5 +11,6 @@ class ChannelPage < Generic
   def logout
     @browser.i(id: 'presence').click
     @browser.li(id: 'logout').when_present.click
+    App.logout_page.confirm_on_page
   end
 end

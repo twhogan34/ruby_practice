@@ -5,6 +5,6 @@ class LogoutPage < Generic
   end
 
   def confirm_on_page
-    Watir::Wait.until { @browser.url.eql? URLS['logout_url'] }
+    @browser.a(text: 'Sign back in').wait_until_present(10)
   end
 end
