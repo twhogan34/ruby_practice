@@ -1,7 +1,4 @@
-class LoginPage
-  def initialize(browser)
-    @browser = browser
-  end
+class LoginPage < Generic
 
   def visit
     @browser.goto URLS['base_url']
@@ -14,6 +11,7 @@ class LoginPage
   def login
     @email = USER_DETAILS['email']
     @password = USER_DETAILS['password']
+    @browser.input(type: 'checkbox').click unless @browser.input(type: 'checkbox').checked? == false
     @browser.text_field(id: 'email').send_keys @email
     @browser.text_field(id: 'password').send_keys "#{@password}\n"
   end

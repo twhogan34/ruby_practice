@@ -1,15 +1,7 @@
-Before do
-  @browser = Watir::Browser.new :chrome
-  @domain = DomainPage.new(@browser)
-  @login = LoginPage.new(@browser)
-  @channel = ChannelPage.new(@browser)
-  @logout = LogoutPage.new(@browser)
-end
-
-After do
-  @browser.close
+After('@successful_login') do
+  App.channel_page.logout
 end
 
 at_exit do
-  @browser.close
+  @@browser.close!
 end

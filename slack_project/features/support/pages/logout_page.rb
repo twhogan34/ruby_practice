@@ -1,7 +1,4 @@
-class LogoutPage
-  def initialize(browser)
-    @browser = browser
-  end
+class LogoutPage < Generic
 
   def visit
     @browser.goto URLS['logout_url']

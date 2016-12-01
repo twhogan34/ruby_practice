@@ -1,11 +1,12 @@
 Given(/^I am currently logged in$/) do
-  logged_in?
+  App.login unless App.logged_in?
+  App.channel_page.confirm_on_page
 end
 
 When(/^I log out$/) do
-  @channel.logout
+  App.channel_page.logout
 end
 
 Then(/^I should be logged out$/) do
-  @logout.confirm_on_page
+  App.logout_page.confirm_on_page
 end

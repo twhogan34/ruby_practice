@@ -1,7 +1,4 @@
-class DomainPage
-  def initialize(browser)
-    @browser = browser
-  end
+class DomainPage < Generic
 
   def visit
     @browser.goto URLS['signin_url']

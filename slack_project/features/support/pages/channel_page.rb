@@ -1,7 +1,4 @@
-class ChannelPage
-  def initialize(browser)
-    @browser = browser
-  end
+class ChannelPage < Generic
 
   def visit
     @browser.goto URLS['channel_url']

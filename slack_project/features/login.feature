@@ -5,7 +5,7 @@ Feature: Login
 Background:
   Given I am on the signin page
 
-@incorrect_domain
+@invalid_domain
 Scenario: Incorrect team domain
   When I enter an incorrect team domain name
   Then an incorrect team domain error should be thrown
