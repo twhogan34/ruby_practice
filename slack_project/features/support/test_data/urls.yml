@@ -1,2 +1,4 @@
 signin_url: https://slack.com/signin
 base_url: https://spartaglobal.slack.com
+channel_url: https://spartaglobal.slack.com/messages
+logout_url: https://spartaglobal.slack.com/signout/done

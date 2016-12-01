@@ -1,16 +1,12 @@
-Before('@login') do
+Before do
   @browser = Watir::Browser.new :chrome
   @domain = DomainPage.new(@browser)
   @login = LoginPage.new(@browser)
   @channel = ChannelPage.new(@browser)
+  @logout = LogoutPage.new(@browser)
 end
-=begin
-Before('@online_status') do
-  login
-end
-=end
 
-After('@login') do
+After do
   @browser.close
 end
 
