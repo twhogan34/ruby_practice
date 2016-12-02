@@ -1,5 +1,5 @@
 Given(/^I am currently logged in$/) do
-  App.login unless App.logged_in?
+  App.logged_in?
   App.channel_page.confirm_on_page
 end
 
