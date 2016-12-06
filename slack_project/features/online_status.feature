@@ -3,7 +3,7 @@ Feature: Online status
   This feature will test the online status button in all it's various states
 
 Background: Acitivy monitor set to active (green) as standard
-  Given I am logged in and the side navbar is visible
+  Given I am logged in and I am able to type commands in the text field
 
 Scenario Outline:
   When the activity monitor is set to <status>

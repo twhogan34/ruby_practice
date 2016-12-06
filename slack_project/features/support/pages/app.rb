@@ -26,6 +26,7 @@ class App
 
   def self.logged_in?
     self.login unless @@browser.url == /URLS['channel_url'].*/
+    self.channel_page.confirm_on_page
   end
 
   private_class_method :new

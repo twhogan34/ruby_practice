@@ -13,4 +13,9 @@ class ChannelPage < Generic
     @browser.li(id: 'logout').when_present.click
     App.logout_page.confirm_on_page
   end
+
+# activity monitor methods
+  def set_activity_monitor
+    @browser.i(id: 'presence').click
+  end
 end

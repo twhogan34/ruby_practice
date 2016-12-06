@@ -1,12 +1,13 @@
 # background
-Given(/^I am logged in and the side navbar is visible$/) do
-  login
-  expect(@browser.header(id: 'client_header').visible?).to eq true
+Given(/^I am logged in and I am able to type commands in the text field$/) do
+  App.logged_in?
+  App.slackbot.visit
+  App.slackbot.confirm_on_page
 end
 
 # activity monitor active
 When(/^the activity monitor is set to active$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  
 end
 
 Then(/^my activity status should be active$/) do

@@ -1,6 +1,5 @@
 Given(/^I am currently logged in$/) do
   App.logged_in?
-  App.channel_page.confirm_on_page
 end
 
 When(/^I log out$/) do
